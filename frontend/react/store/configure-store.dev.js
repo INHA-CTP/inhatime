@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './../reducers';
-import DevTools from '../containers/dev-tools';
+import DevTools from './../containers/dev-tools';
 
 export default (initialState = {}, { reactRouterMiddleware }) => {
   const store = createStore(

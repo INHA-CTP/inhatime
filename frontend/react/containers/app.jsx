@@ -12,11 +12,15 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.props.children);
     return (
       <div>
         <Nav />
-        {this.props.children}
+        <div
+          className='row'
+          style={{ marginTop: '50px' }}
+        >
+          {this.props.children}
+        </div>
         <Footer />
       </div>
     );
