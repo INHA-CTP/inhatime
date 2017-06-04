@@ -5,6 +5,7 @@ import { reducer as form } from 'redux-form';
 import app from './app';
 import course from './course';
 import session from './session';
+import recommendation from './recommendation';
 
 const rootReducer = combineReducers({
   app,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   routing,
   session,
   form,
+  recommendation,
 });
 
 export default rootReducer;

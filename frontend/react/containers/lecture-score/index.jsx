@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import CourseWrapper from './course-wrapper';
-import { fetchRecommendable, postCourseScore } from './../../actions/course';
+import { fetchRecommendable, postCourseScore } from './../../actions/recommendation';
 
 
 class LectureScore extends Component {
@@ -49,10 +49,10 @@ LectureScore.propTypes = {
   postCourseScore: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ session, course }) => {
+const mapStateToProps = ({ session, course, recommendation }) => {
   return {
     session,
-    recommendable: course.recommendable,
+    recommendable: recommendation.recommendable,
   };
 };
 

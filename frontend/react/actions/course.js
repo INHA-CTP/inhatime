@@ -14,12 +14,6 @@ export const SAVE_SCHEDULE = 'SAVE_SCHEDULE';
 export const FETCH_RECOMMENDABLE = 'FETCH_RECOMMENDABLE';
 export const POST_COURSE_SCORE = 'POST_COURSE_SCORE';
 
-export const clearErrors = () => {
-  return {
-    type: CLEAR_ERRORS,
-  };
-};
-
 const parseErrors = (errors) => {
   if (errors.response) {
     return errors.response.data.errors;
@@ -75,26 +69,6 @@ export const saveSchedule = (data) => {
   };
 };
 
-export const fetchRecommendable = () => {
-  return (dispatch) => {
-    return httpGet('/recommendable')
-    .then((data) => {
-      return dispatch({
-        type: FETCH_RECOMMENDABLE,
-        data,
-      });
-    });
-  };
-};
-
-export const clearSchedule = () => {
-  return (dispatch) => {
-    return dispatch({
-      type: CLEAR_SCHEDULE,
-    });
-  };
-};
-
 // export const removeCourse = (courseId) => {
 //   return (dispatch) => {
 //     return dispatch({
@@ -120,25 +94,6 @@ export const searchCourses = (values) => {
     .then((data) => {
       return dispatch({
         type: FETCH_COURSES,
-        data,
-      });
-    })
-    .catch((errors) => {
-      return dispatch({
-        type: COURSE_ERRORS,
-        errors: parseErrors(errors),
-      });
-    });
-  };
-};
-
-
-export const postCourseScore = (values) => {
-  return (dispatch) => {
-    return httpPost('/recommendable', values)
-    .then((data) => {
-      return dispatch({
-        type: POST_COURSE_SCORE,
         data,
       });
     })
